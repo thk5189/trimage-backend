@@ -1,5 +1,5 @@
 const db = require('../models')
-console.log(db)
+// console.log(db)
 
 const getAlbum = (req, res) => {
     res.send('this is get album');
