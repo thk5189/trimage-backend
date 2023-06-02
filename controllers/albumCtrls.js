@@ -25,9 +25,33 @@ const getAlbum = (req, res) => {
         }
     })
 }
-  
+  // ALBUM UPDATE ROUTE
+const updateAlbum = (req, res) => {
+    db.Album.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then((updatedAlbum) => {
+        if(!updatedAlbum){
+            res.status(400).json({Message: 'Could not update Album'})
+        } else {
+            res.status(200).json({Data: updatedAlbum, Message: "Album updated"})
+        }
+    })
+}
+
+// ALBUM DESTROY ROUTE
+const deleteAlbum = (req, res) => {
+    db.Album.findByIdAndDelete(req.params.id)
+    .then((deletedAlbum) => {
+        if(!deletedAlbum){
+            res.status(400).json({Message: 'Could not delete Album'})
+        } else {
+            res.status(200).json({Data: deletedAlbum, Message: "Album deleted"})
+        }
+    })
+}
   module.exports = {
     getAlbum,
-    createAlbum
+    createAlbum,
+    updateAlbum,
+    deleteAlbum
   };
   
