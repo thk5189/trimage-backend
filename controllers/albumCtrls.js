@@ -12,7 +12,6 @@ const getAlbum = (req, res) => {
         }
     })
 }
-
   
   const createAlbum = (req, res) => {
     // res.send('this is create album');

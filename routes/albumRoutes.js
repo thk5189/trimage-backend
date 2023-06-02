@@ -4,5 +4,6 @@ const { albumCtrl } = require('../controllers') //all functions/methods imported
 // ROUTES - METHODS //
 router.get('/', albumCtrl.getAlbum)
 router.post('/', albumCtrl.createAlbum)
+router.put("/:id", albumCtrl.updateAlbum)
 
 module.exports = router;
