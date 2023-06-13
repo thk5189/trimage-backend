@@ -6,6 +6,7 @@ const AlbumSchema = new mongoose.Schema({
   title: String,
 });
 
+
 const Album = mongoose.model("Album", AlbumSchema);
 
 module.exports = Album;
